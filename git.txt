@@ -1,0 +1,10 @@
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/maumitasarkar16/algorithmPractice.git
+git push -u origin main
+
+
+access token - 
+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

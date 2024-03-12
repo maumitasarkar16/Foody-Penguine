@@ -5,14 +5,21 @@ import { clearCart } from "../utils/cartSlice";
 const Cart = () => {
 
     const cartItems = useSelector((store) => store.cart.items);
-    console.log("Cart Items---",cartItems)
+    console.log("Cart Items---", cartItems)
 
     const dispatch = useDispatch();
     const handleClearCart = () => {
         dispatch(clearCart());
     }
 
-    
+
+    if (cartItems.length === 0)
+        return (
+            <div className="text-center m-2 p-2">
+                <h1 className=" w-6/12 m-auto text-lg font-bold">Cart is empty.Please add some products</h1>
+            </div>
+        );
+
     return (
         <div className="text-center m-2 p-2">
             <h2 className="text-2xl font-bold">Cart</h2>

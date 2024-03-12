@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { CON_URL } from "../utils/constants";
-import { addItem } from "../utils/cartSlice";
+import { addItem, removeItem } from "../utils/cartSlice";
+import { useLocation } from "react-router-dom";
 
 const ItemList = ({ items }) => {
     console.log("ItemList--", items)
@@ -11,6 +12,13 @@ const ItemList = ({ items }) => {
         dispatch(addItem(item))
 
     }
+
+    const handleRemoveItem = (item) => {
+        dispatch(removeItem(item))
+    }
+
+    const location = useLocation();
+    const { pathname } = location;
 
     //onClick={() => handleAddItem(item)}
     //onClick={handleAddItem(item)}
@@ -28,7 +36,10 @@ const ItemList = ({ items }) => {
                             <p className="text-xs text-gray-500 pt-2 ">{item.card.info.description}</p>
                         </div>
                         <div className="w-3/12">
-                            <div className="absolute"><button className="bg-white text-green-600 font-bold text-sm mx-14 my-16 p-2 rounded-sm border-solid border-gray-400 border-1 shadow-2xl" onClick={() => handleAddItem(item)}>Add +</button></div>
+                            <div className="absolute"><button className="bg-white text-green-600 font-bold text-sm mx-14 my-16 p-2 rounded-sm border-solid border-gray-400 border-1 shadow-2xl"
+                                onClick={() => pathname === '/cart' ? handleRemoveItem(item) : handleAddItem(item)} >
+                                {pathname === '/cart' ? "Remove -" : "Add +"}
+                            </button></div>
                             <img className="w-[160px] h-[100px] rounded-md" alt="food-logo" src={CON_URL + item.card.info.imageId} />
 
                         </div>

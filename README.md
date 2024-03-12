@@ -34,3 +34,15 @@
  *  - Links
  *  - Contact Info
  */
+
+ # 2 types of routing
+  - client side routing
+  - server side routing
+
+ # Redux Toolkit
+   - install Redux @reduxjs/toolkit and react-redux
+   - Build our store
+   - connect our store to our app
+   - create the cart slices
+   - dispath an action
+   - read the data using selector

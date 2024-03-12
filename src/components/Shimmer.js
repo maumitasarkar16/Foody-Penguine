@@ -1,14 +1,15 @@
+/**to create a placeholder */
 const Shimmer = () => {
     return (
-        <div className="shimmer-container">
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
-            <div className="shimmer-card"></div>
+        <div className="flex flex-wrap">
+            <div className=" bg-green-50 h-[400px] w-[200px] m-[20px]"></div>
+            <div className=" bg-green-50 h-[400px] w-[200px] m-[20px]"></div>
+            <div className=" bg-green-50 h-[400px] w-[200px] m-[20px]"></div>
+            <div className=" bg-green-50 h-[400px] w-[200px] m-[20px]"></div>
+            <div className=" bg-green-50 h-[400px] w-[200px] m-[20px]"></div>
+            <div className=" bg-green-50 h-[400px] w-[200px] m-[20px]"></div>
+            <div className=" bg-green-50 h-[400px] w-[200px] m-[20px]"></div>
+            <div className=" bg-green-50 h-[400px] w-[200px] m-[20px]"></div>
         </div>
     )
 }

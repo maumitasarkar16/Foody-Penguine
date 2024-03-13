@@ -11,6 +11,10 @@ import UserContext from "./utils/userContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/cart";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { getTotals } from "./utils/cartSlice";
+
 
 //const About = lazy(() => import("./components/About"))
 
@@ -29,13 +33,14 @@ const AppLayout = () => {
         }, [])
 
 
-
+        appStore.dispatch(getTotals())
 
         return (
                 <Provider store={appStore}>
                         <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
                                 <div className="app">
                                         <Header />
+                                        <ToastContainer />
                                         <Outlet />
                                 </div>
                         </UserContext.Provider>

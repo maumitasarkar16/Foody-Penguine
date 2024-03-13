@@ -4,12 +4,13 @@ import userRestaurantMenu from "../utils/userRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 import { useState } from "react";
 
+
 const RestaurantMenu = () => {
     const { resId } = useParams();
 
     const [showIndex, setShowIndex] = useState(null);
     const resInfo = userRestaurantMenu(resId);
-    
+
     /*const [resInfo, setResInfo] = useState(null);
     useEffect(() => {
         fetchMenu();
@@ -76,7 +77,7 @@ const RestaurantMenu = () => {
             <ul >
                 {
                     ItemCategory.map((category, index) => (
-                        <h3><RestaurantCategory key={category?.card?.card.title} resData={category?.card?.card} showItems={index === showIndex ? true : false} setShowIndex={() => ((showIndex === index ? setShowIndex(null) : setShowIndex(index))) }  /></h3>
+                        <h3><RestaurantCategory key={index} resData={category?.card?.card} showItems={index === showIndex ? true : false} setShowIndex={() => ((showIndex === index ? setShowIndex(null) : setShowIndex(index)))} /></h3>
                     ))
                 }
             </ul>

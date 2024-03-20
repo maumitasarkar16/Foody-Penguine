@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/maumitasarkar16/namasteReact#readme",
   "devDependencies": {
+    "buffer": "^6.0.3",
     "parcel": "^2.10.3",
     "postcss": "^8.4.35",
     "process": "^0.11.10",
@@ -28,6 +29,8 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
+    "axios": "^1.6.8",
+    "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-infinite-scroll-component": "^6.1.0",

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CON_URL } from "../utils/constants";
 import { addItem, removeItem, updateItem, clearCart, decreaseCart, getTotals } from "../utils/cartSlice";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 const CartItemList = ({ items }) => {
@@ -9,14 +10,13 @@ const CartItemList = ({ items }) => {
     const dispatch = useDispatch();
 
     const cart = useSelector((store) => store.cart)
+    const auth = useSelector((store) => store.auth)
 
     useEffect(() => {
         dispatch(getTotals())
     },[cart, dispatch])
 
     
-
-
     const handleRemoveItem = (item) => {
         dispatch(removeItem(item))
     }
@@ -75,7 +75,10 @@ const CartItemList = ({ items }) => {
                         <span className="font-bold">Subtotal: </span>
                         <span className="amount">₹{cart.cartTotalAmount}</span> 
                     </div>
-                    <button className="bg-green-600 text-white rounded-lg p-2 m-2">Checkout</button>
+
+                    <button className="bg-green-600 text-white rounded-lg p-2 m-2">{auth._id ? "Checkout" :  <Link to="/login">Login to Checkout</Link> }</button>
+                  
+                  
                 </div>
             </div>
    

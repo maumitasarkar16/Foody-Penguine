@@ -17,7 +17,7 @@ const Cart = () => {
     if (cartItems.length === 0)
         return (
             <div className="text-center m-2 p-2">
-                <h1 className=" w-6/12 m-auto text-lg font-bold">Cart is empty.Please add some products</h1>
+                <h1 className="w-6/12 m-auto text-lg font-bold">Cart is empty.Please add some products</h1>
             </div>
         );
 

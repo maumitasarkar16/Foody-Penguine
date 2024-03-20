@@ -6,9 +6,14 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { Link } from "react-router-dom";
 import userCheckOnline from "../utils/userCheckOnline";
 import UserContext from "../utils/userContext";
+import { useSelector } from "react-redux"
 
 
 const Body = () => {
+
+    const auth = useSelector((store) => store.auth );
+    console.log("auth--", auth)
+
     //const [listOfRestaurants, setListOfRestaurants] = useState(resList)
     const [listOfRestaurants, setListOfRestaurants] = useState([]); //array
     const [filteredRestaurant, setfilteredRestaurant] = useState([]); //array
@@ -35,7 +40,7 @@ const Body = () => {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
 
         const json = await data.json();
-        console.log(json);
+        console.log("body data---",json);
         setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setfilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 

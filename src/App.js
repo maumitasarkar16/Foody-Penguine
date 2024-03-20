@@ -14,6 +14,9 @@ import Cart from "./components/cart";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getTotals } from "./utils/cartSlice";
+import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
+import { loadUser } from "./utils/authSlice";
 
 
 //const About = lazy(() => import("./components/About"))
@@ -34,6 +37,7 @@ const AppLayout = () => {
 
 
         appStore.dispatch(getTotals())
+        appStore.dispatch(loadUser(null))
 
         return (
                 <Provider store={appStore}>
@@ -76,6 +80,14 @@ const appRouter = createBrowserRouter([
                         {
                                 path: "/cart",
                                 element: <Cart />
+                        },
+                        {
+                                path: "/register",
+                                element: <Register />
+                        },
+                        {
+                                path: "/login",
+                                element: <Login />
                         },
                         {
                                 path: "/restaurants/:resId",

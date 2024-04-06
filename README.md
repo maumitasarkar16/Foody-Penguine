@@ -46,3 +46,9 @@
    - create the cart slices
    - dispath an action
    - read the data using selector
+
+
+ # Types of Testing
+   - Unit Testing
+   - Integration Testing
+   - End to End Testing

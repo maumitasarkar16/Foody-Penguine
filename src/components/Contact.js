@@ -10,7 +10,7 @@ const Contact = () => {
 
     return (
         <div>
-            <h2>Contact Us</h2>
+            <h2 data-testid="contact-us">Contact Us</h2>
             <CheckContact setCheckContactData={handleDataFromCheckContact}/>
             <p>Data from Check Contact in Parent- { checkContactData } </p>
         </div>

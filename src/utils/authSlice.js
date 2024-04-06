@@ -152,6 +152,7 @@ const authSlice = createSlice({
                     loginError: action.payload
                 }
             })
+            
 
     },
 

@@ -36,7 +36,7 @@ const cartSlice = createSlice({
             //state.items.pop();
             state.items = state.items.filter((item) => item.card.info.id !== action.payload.card.info.id);
 
-            toast.error(`Removed ${item.card.info.name} from cart`, {
+            toast.error(`Removed from cart`, {
                 position: "bottom-left"
             });
 

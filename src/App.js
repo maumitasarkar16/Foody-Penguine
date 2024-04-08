@@ -10,7 +10,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./utils/userContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
-import Cart from "./components/cart";
+import Cart from "./components/Cart";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getTotals } from "./utils/cartSlice";

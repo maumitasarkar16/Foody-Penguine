@@ -1,7 +1,7 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import UserContext from "../utils/userContext";
+import UserContext from "../utils/UserContext";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../utils/authSlice";
 import { toast } from "react-toastify";

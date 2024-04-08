@@ -5,7 +5,7 @@ import Shimmer from "./Shimmer";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Link } from "react-router-dom";
 import userCheckOnline from "../utils/userCheckOnline";
-import UserContext from "../utils/userContext";
+import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux"
 
 

@@ -85,25 +85,25 @@ const Body = () => {
         <div className="body">
 
             <div className="filter flex">
+                {/* Search */ }
                 <div className="search">
-                    <input type="text" className="h-4 m-4 p-4 border-2 border-gray-300 " value={searchText} onChange={(e) => {
+                    <input type="text" className="h-4 m-2 p-4 border-2 border-gray-300 " value={searchText} onChange={(e) => {
                         setsearchText(e.target.value);
                     }} />
-                    <button className="m-[14px]  bg-blue-200 p-2 rounded-md" onClick={() => {
-
+                    <button className=" bg-blue-200 p-2 rounded-md" onClick={() => {
                         const filteredRestaurant = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()))
                         console.log(searchText); console.log(filteredRestaurant);
                         setfilteredRestaurant(filteredRestaurant)
 
                     }}>Search</button>
                 </div>
+                 {/* Filter */ }
                 <div className="flex">
-                    <button className="m-[14px] px-4 bg-blue-600 rounded-md" onClick={() => {
-                        const filteredList = listOfRestaurants.filter((res) => res.info.avgRating > 4.5)
-                        console.log(filteredList);
+                    <button className=" mx-4 my-2 p-2 bg-blue-600 rounded-md" onClick={() => {
+                        const filteredList = listOfRestaurants.filter((res) => res.info.avgRating > 4)
                         setfilteredRestaurant(filteredList)
                     }}>
-                        Filter By Ratings
+                        Filter By Ratings Greater than 4
                     </button>
                 </div>
 
